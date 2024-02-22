@@ -14,4 +14,6 @@ RUN sudo apt-get update \
     && sudo apt-get clean -y \
     && sudo rm -rf /var/lib/apt/lists/*
 
-RUN satysfi solve document.saty
+COPY --chown=gitpod:gitpod . /tmp/work
+
+RUN satysfi solve /tmp/work/document.saty
