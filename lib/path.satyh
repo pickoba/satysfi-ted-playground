@@ -1,0 +1,28 @@
+use package open Stdlib
+
+module Path :> sig
+
+  val (--) 'a 'b: 'a -> 'b -> pre-path
+    constraint
+      try 'a = pre-path else
+      | 'a = length * length -> `You might want to enclose the point with 'start-path'`
+      | _ -> `Left hand side must be a pre-path`
+      end
+    constraint 
+      try 'b = length * length else
+      | _ -> `Right hand side must be a point`
+      end
+  
+  val \draw : inline [pre-path]
+
+end = struct
+
+  val (--) a b = a |> line-to b
+
+  val inline ctx \draw p =
+    let gr = terminate-path p |> stroke 1pt Color.black in
+    let ((x-min, y-min), (x-max, y-max)) = get-graphics-bbox gr |> Option.from ((0pt, 0pt), (0pt, 0pt)) in
+    let (w, h) = (x-max -' x-min, y-max -' y-min) in
+    inline-graphics w h 0pt (fun (x, y) -> gr |> shift-graphics (x -' x-min, y -' y-min))
+
+end

@@ -1,0 +1,33 @@
+#[config (|
+  registries = [
+    (|
+      name = `default`,
+      remote =
+        Git(|
+          url = `https://github.com/kyori19/satysfi-registry`,
+          branch = `master`,
+        |)
+    |)
+  ],
+  dependencies = [
+    (| name = `stdlib`, registry = `default`, requirement = `^0.0.1` |),
+    (| name = `std-ja-book`, registry = `default`, requirement = `^0.0.1` |),
+  ],
+|)]
+use package open StdJaBook
+use package open Stdlib
+use open Path of `lib/path`
+
+document (|
+  title = {\Pervasives.SATySFi;-TED Example},
+  author = {Ryota KOBAYASHI},
+|) '<
+  +p{
+    Try removing `start-path` and recompiling.
+  }
+  +p{
+    \draw(
+      start-path (0pt, 0pt) -- (0pt, 30pt) -- (30pt, 30pt)
+    );
+  }
+>
