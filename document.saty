@@ -18,15 +18,22 @@ use package open StdJaBook
 use package open Stdlib
 use open Path of `lib/path`
 
+% modify here or ...
+let triangle = start-path (0pt, 0pt) -- (8pt, 4pt) -- (0pt, 8pt) -- (0pt, 0pt) in
+
 document (|
   title = {\Pervasives.SATySFi;-TED Example},
   author = {Ryota KOBAYASHI},
 |) '<
   +p{
-    Try removing `start-path` and recompiling.
+    Try removing `start-path` and recompiling. You can compile this document from the top right button \draw?(color = Color.green)(triangle); and keyboard shortcuts (ctrl/cmd + alt + b).
+  }
+  +p{
+    If the document contains an error, a popup will appear. Click "Open Log" to see the error message.
   }
   +p{
     \draw(
+      % ... here
       start-path (0pt, 0pt) -- (0pt, 30pt) -- (30pt, 30pt)
     );
   }

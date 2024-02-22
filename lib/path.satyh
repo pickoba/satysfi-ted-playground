@@ -13,14 +13,15 @@ module Path :> sig
       | _ -> `Right hand side must be a point`
       end
   
-  val \draw : inline [pre-path]
+  val \draw : inline [?(color : color) pre-path]
 
 end = struct
 
   val (--) a b = a |> line-to b
 
-  val inline ctx \draw p =
-    let gr = terminate-path p |> stroke 1pt Color.black in
+  val inline ctx \draw ?(color = coloropt) p =
+    let color = coloropt |> Option.from Color.black in
+    let gr = terminate-path p |> stroke 1pt color in
     let ((x-min, y-min), (x-max, y-max)) = get-graphics-bbox gr |> Option.from ((0pt, 0pt), (0pt, 0pt)) in
     let (w, h) = (x-max -' x-min, y-max -' y-min) in
     inline-graphics w h 0pt (fun (x, y) -> gr |> shift-graphics (x -' x-min, y -' y-min))
