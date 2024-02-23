@@ -1,6 +1,6 @@
 FROM ghcr.io/pickoba/docker-satysfi-ted:main AS build
 
-FROM gitpod/workspace-base
+FROM gitpod/workspace-base:2024-02-21-19-51-22
 
 USER gitpod
 
