@@ -1,0 +1,17 @@
+{
+	"name": "SATySFi-TED",
+	"build": {
+		"context": ".",
+		"dockerfile": "./Dockerfile"
+	},
+	"postCreateCommand": "satysfi solve document.saty",
+	"remoteUser": "vscode",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"tomoki1207.pdf",
+				"pickoba.satysfi-workshop"
+			]
+		}
+	}
+}

@@ -1,16 +1,23 @@
-# SATySFi-TED Gitpod Template
+# SATySFi-TED Playground
 
-This is a SATySFi-TED template for Gitpod.
+This is a SATySFi-TED Playground.
 
-Click the button below to start a new environment:
+## How to Use
+
+### Try Online
+
+Click the button below to start a new environment in [Gitpod](https://www.gitpod.io). The GitHub account is required.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/pickoba/satysfi-ted-gitpod-template/blob/main/document.saty)
 
+### Try Locally
+
 If you want to use VS Code in your local environment, follow the steps below.
 
-1. Open Gitpod in your browser using the button above
-2. Open the command palette by pressing "Ctrl/Cmd+Shift+P"
-3. Select "Open in VS Code" to start VS Code in your local environment
+1. Clone this repository
+1. Open the repository in VS Code
+   - [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension is required
+1. Click the "Reopen in Container" button in the notification that appears at the bottom-right of the window
 
 ## License
 
