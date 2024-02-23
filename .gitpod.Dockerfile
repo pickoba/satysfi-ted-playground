@@ -13,7 +13,3 @@ RUN sudo apt-get update \
     && sudo apt-get autoremove -y \
     && sudo apt-get clean -y \
     && sudo rm -rf /var/lib/apt/lists/*
-
-COPY --chown=gitpod:gitpod . /tmp/work
-
-RUN satysfi solve /tmp/work/document.saty
